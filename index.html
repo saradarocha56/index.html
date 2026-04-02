@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sara Rocha | Desenvolvedora de Sites</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:white;
+      color:#111;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      background:white;
+      padding:20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #eee;
+    }
+
+    .logo{
+      font-family:'Cormorant Garamond',serif;
+      font-size:28px;
+    }
+
+    nav a{
+      margin-left:20px;
+      text-decoration:none;
+      color:#111;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px;
+    }
+
+    .hero h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:60px;
+    }
+
+    .hero p{
+      margin-top:20px;
+      color:#555;
+    }
+
+    section{
+      padding:80px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .card{
+      border:1px solid #eee;
+      padding:25px;
+      border-radius:20px;
+      margin-top:20px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    @media(max-width:800px){
+      .grid{grid-template-columns:1fr;}
+      .hero h1{font-size:40px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Sara Rocha</div>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Desenvolvedora de sites</h1>
+    <p>Iniciante, mas extremamente dedicada, criativa e focada em entregar sites bonitos e funcionais.</p>
+  </div>
+</section>
+
+<section id="sobre">
+  <h2>Sobre mim</h2>
+  <div class="card">
+    Estou no começo da minha jornada no desenvolvimento de sites, e por isso meus valores são mais acessíveis (entre R$300 e R$1.500 dependendo do projeto).<br><br>
+    A maioria cobra muito mais, mas isso não define qualidade. Eu sou extremamente dedicada e cada projeto recebe minha atenção total.
+  </div>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+
+  <div class="card">
+    <p><strong>Email:</strong><br>
+    <a href="mailto:saradarocha56@gmail.com">saradarocha56@gmail.com</a></p>
+
+    <p><strong>WhatsApp:</strong><br>
+    <a href="https://wa.me/5546991201692" target="_blank">
+    +55 46 99120-1692</a></p>
+
+    <p><strong>Instagram:</strong><br>
+    <a href="https://instagram.com/sarasdearmemory" target="_blank">
+    @sarasdearmemory</a></p>
+  </div>
+</section>
+
+</body>
+</html>
