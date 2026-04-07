@@ -1,625 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sara Rocha | Desenvolvedora de Sites</title>
-  <meta name="description" content="Portfólio pessoal de Sara Rocha, desenvolvedora de sites iniciante, criativa e dedicada." />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Rocha</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #1d1d1d;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: url("flowers-bg.png") center top / cover no-repeat;
-      opacity: 0.14;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(255,255,255,0.84);
-      z-index: -1;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      text-align: center;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 40px 20px 20px;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: #111;
-    }
-
-    .menu {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .menu a {
-      font-size: 0.96rem;
-      color: #333;
-      transition: 0.25s;
-    }
-
-    .menu a:hover {
-      color: #000;
-      opacity: 0.75;
-    }
-
-    .menu-btn {
-      display: none;
-      border: none;
-      background: transparent;
-      font-size: 1.7rem;
-      cursor: pointer;
-      color: #111;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 70px 0 40px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 0.82rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: #7d7d7d;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      line-height: 0.95;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: #444;
-      max-width: 640px;
-      margin-bottom: 26px;
-    }
-
-    .price-box {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(0,0,0,0.08);
-      font-size: 0.95rem;
-      color: #333;
-      margin-bottom: 28px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: 0.25s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #111;
-    }
-
-    .btn-primary {
-      background: #111;
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: #2a2a2a;
-      border-color: #2a2a2a;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #111;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0,0,0,0.04);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 30px;
-      padding: 26px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.06);
-    }
-
-    .hero-photo {
-      border-radius: 22px;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 520px;
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       object-fit: cover;
     }
 
-    .mini-info {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+    h1 {
+      margin: 15px 0 5px;
+      font-size: 26px;
+      font-weight: 500;
     }
 
-    .mini-box {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .mini-box small {
-      display: block;
-      color: #7b7b7b;
-      margin-bottom: 6px;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .mini-box strong {
-      font-size: 1rem;
-      color: #171717;
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 54px;
-    }
-
-    .section-title span {
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #8b8b8b;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .section-title h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      color: #111;
-      line-height: 1;
-    }
-
-    .about-grid,
-    .services-grid,
-    .contact-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .about-grid {
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-    }
-
-    .card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      margin-bottom: 14px;
-      color: #111;
-    }
-
-    .card p {
+    p {
+      max-width: 600px;
+      margin: 15px auto;
+      font-size: 15px;
+      line-height: 1.6;
       color: #444;
-      font-size: 1rem;
     }
 
-    .services-grid {
-      grid-template-columns: repeat(3, 1fr);
+    h2 {
+      margin-top: 40px;
+      font-weight: 500;
     }
 
-    .service-item h3 {
-      font-size: 1.4rem;
+    ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .service-item p {
-      margin-top: 10px;
+    li {
+      margin: 10px 0;
+      font-size: 16px;
     }
 
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
+    .btn {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 25px;
+      border: 1px solid #000;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #000;
+      transition: 0.3s;
     }
 
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .contact-link {
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(0,0,0,0.08);
-      background: #fff;
-      transition: 0.25s;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+    .btn:hover {
+      background-color: #000;
+      color: #fff;
     }
 
     footer {
-      padding: 28px 0 40px;
-      text-align: center;
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: 0.8s ease;
-    }
-
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 960px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 40px;
-      }
-
-      .hero-photo img {
-        height: 420px;
-      }
-
-      .menu {
-        position: absolute;
-        top: 76px;
-        right: 4%;
-        background: rgba(255,255,255,0.96);
-        border: 1px solid rgba(0,0,0,0.08);
-        border-radius: 22px;
-        padding: 18px;
-        flex-direction: column;
-        align-items: flex-start;
-        min-width: 210px;
-        display: none;
-      }
-
-      .menu.active {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-    }
-
-    @media (max-width: 580px) {
-      .hero h1 {
-        font-size: 3.1rem;
-      }
-
-      .card,
-      .hero-card {
-        border-radius: 22px;
-        padding: 20px;
-      }
-
-      .mini-info {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 13px;
+      color: #888;
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <div class="container nav">
-      <a href="#" class="logo">Sara Rocha</a>
+    <img src="https://via.placeholder.com/150" alt="Foto">
+    <h1>Sara Rocha</h1>
 
-      <nav class="menu" id="menu">
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-      </nav>
-
-      <button class="menu-btn" id="menuBtn">☰</button>
-    </div>
+    <p>
+      Desenvolvedora de sites iniciante, mas com muita dedicação e talento. Estou no começo da minha jornada, e por isso meus valores são mais acessíveis (entre R$300 e R$1.500 dependendo do projeto), enquanto muitos profissionais cobram de R$5.000 a R$15.000 — porém isso não define a qualidade do meu trabalho.
+      <br><br>
+      Sou extremamente dedicada, criativa e comprometida em entregar projetos bem feitos, bonitos e funcionais. Cada site que desenvolvo recebe atenção total, como se fosse único (porque realmente é).
+      <br><br>
+      Além disso, também sou professora de inglês, oferecendo aulas por R$95 cada, com foco em iniciantes e aprendizado prático no dia a dia.
+      <br><br>
+      Se você procura alguém que vai se esforçar de verdade, entender sua ideia e transformar em algo incrível, você acabou de encontrar. Sempre evoluindo, sempre dando o meu melhor.
+    </p>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="fade-up">
-          <div class="eyebrow">Portfólio pessoal</div>
-          <h1>Desenvolvedora de sites iniciante, criativa e dedicada.</h1>
-          <p>
-            Estou no começo da minha jornada no desenvolvimento de sites, mas isso não diminui a qualidade
-            do meu trabalho. Pelo contrário. Cada projeto que faço recebe atenção real, cuidado com os detalhes
-            e vontade de entregar algo bonito, funcional e feito com carinho.
-          </p>
+  <section>
+    <h2>Serviços</h2>
+    <ul>
+      <li>💻 Desenvolvimento de sites: R$300 a R$1.500</li>
+      <li>📚 Aulas de inglês: R$95 por aula</li>
+    </ul>
+  </section>
 
-          <div class="price-box">
-            <span>Projetos entre</span>
-            <strong>R$300 e R$1.500</strong>
-          </div>
-
-          <div class="actions">
-            <a href="#contato" class="btn btn-primary">Entrar em contato</a>
-            <a href="#sobre" class="btn btn-secondary">Sobre mim</a>
-          </div>
-        </div>
-
-        <div class="hero-card fade-up">
-          <div class="hero-photo">
-            <img src="profile.webp" alt="Foto de Sara Rocha">
-          </div>
-
-          <div class="mini-info">
-            <div class="mini-box">
-              <small>Foco</small>
-              <strong>Sites bonitos e funcionais</strong>
-            </div>
-            <div class="mini-box">
-              <small>Estilo</small>
-              <strong>Elegante, leve e moderno</strong>
-            </div>
-            <div class="mini-box">
-              <small>Atendimento</small>
-              <strong>Próximo e dedicado</strong>
-            </div>
-            <div class="mini-box">
-              <small>Valores</small>
-              <strong>Acessíveis no início</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre">
-      <div class="container">
-        <div class="section-title fade-up">
-          <span>Sobre mim</span>
-          <h2>Seu projeto tratado como peça única</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="card fade-up">
-            <h3>Quem eu sou</h3>
-            <p>
-              Sou uma desenvolvedora de sites iniciante, mas muito comprometida com evolução, estética e resultado.
-              Mesmo no começo da minha trajetória, levo cada trabalho a sério e busco criar experiências visuais
-              bonitas, organizadas e agradáveis de navegar.
-            </p>
-          </div>
-
-          <div class="card fade-up">
-            <h3>Como eu trabalho</h3>
-            <p>
-              Eu escuto a ideia com atenção, organizo a estrutura do site, penso no visual, nas cores, nos detalhes
-              e monto tudo com dedicação. Meus valores são mais acessíveis porque estou construindo meu portfólio,
-              não porque entrego menos. Entrego com capricho, esforço e presença em cada etapa.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicos">
-      <div class="container">
-        <div class="section-title fade-up">
-          <span>Serviços</span>
-          <h2>O que posso criar para você</h2>
-        </div>
-
-        <div class="services-grid">
-          <div class="card service-item fade-up">
-            <h3>Sites pessoais</h3>
-            <p>
-              Páginas elegantes para apresentar você, seu trabalho, seus serviços e sua identidade visual de forma profissional.
-            </p>
-          </div>
-
-          <div class="card service-item fade-up">
-            <h3>Sites para marcas</h3>
-            <p>
-              Estruturas pensadas para lojas, negócios, estúdios, criadores e pequenas empresas que querem presença online bonita.
-            </p>
-          </div>
-
-          <div class="card service-item fade-up">
-            <h3>Ideias para marcas</h3>
-            <p>
-              Além do site, também desenvolvo ideias visuais e criativas para nomes, apresentação e imagem da sua marca.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato">
-      <div class="container">
-        <div class="section-title fade-up">
-          <span>Contato</span>
-          <h2>Vamos transformar sua ideia em algo bonito</h2>
-        </div>
-
-        <div class="contact-grid">
-          <div class="card fade-up">
-            <h3>Fale comigo</h3>
-            <p>
-              Se você procura alguém que vai realmente se esforçar para entender sua ideia e transformar isso
-              em um site bonito e funcional, você acabou de encontrar. Estou sempre evoluindo e dando o meu melhor.
-            </p>
-
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:saradarocha56@gmail.com">saradarocha56@gmail.com</a>
-              <a class="contact-link" href="https://wa.me/5546991201692" target="_blank">WhatsApp: +55 46 99120-1692</a>
-              <a class="contact-link" href="https://instagram.com/sarasdearmemory" target="_blank">Instagram: @sarasdearmemory</a>
-            </div>
-          </div>
-
-          <div class="card fade-up">
-            <h3>Faixa de valores</h3>
-            <p>
-              Como estou no início, meus projetos costumam variar entre <strong>R$300 e R$1.500</strong>,
-              dependendo da complexidade. Isso permite que eu ofereça um valor mais acessível sem abrir mão
-              do cuidado com o resultado final.
-            </p>
-            <br>
-            <p>
-              Muitos profissionais cobram muito mais, mas preço alto não é a única medida de qualidade.
-              O que eu entrego vem com atenção, dedicação e vontade real de fazer um trabalho bonito.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <section>
+    <a href="https://wa.me/554699276622" target="_blank" class="btn">
+      Fale comigo no WhatsApp
+    </a>
+  </section>
 
   <footer>
-    <div class="container">
-      © 2026 Sara Rocha. Todos os direitos reservados.
-    </div>
+    © 2026 Sara Rocha — Todos os direitos reservados
   </footer>
 
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('active');
-      });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
