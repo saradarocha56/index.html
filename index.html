@@ -8,107 +8,136 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      font-family: 'Inter', Arial, sans-serif;
+      background: #ffffff;
       color: #000;
       text-align: center;
-    }
-
-    header {
-      padding: 40px 20px 20px;
-    }
-
-    img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
+      padding: 40px 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
     h1 {
-      margin: 15px 0 5px;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 500;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.8s ease forwards;
+      animation-delay: 0.3s;
     }
 
     p {
-      max-width: 600px;
-      margin: 15px auto;
+      max-width: 650px;
+      margin: 20px auto;
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #444;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.8s ease forwards;
+      animation-delay: 0.6s;
     }
 
-    h2 {
+    .section {
       margin-top: 40px;
-      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.8s ease forwards;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .services {
+      font-size: 15px;
+      color: #222;
     }
 
-    li {
-      margin: 10px 0;
-      font-size: 16px;
+    .services div {
+      margin: 8px 0;
     }
 
     .btn {
       margin-top: 30px;
       display: inline-block;
-      padding: 12px 25px;
+      padding: 12px 28px;
+      border-radius: 30px;
       border: 1px solid #000;
-      border-radius: 25px;
       text-decoration: none;
       color: #000;
+      position: relative;
+      overflow: hidden;
       transition: 0.3s;
     }
 
+    .btn::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: #000;
+      transition: 0.4s;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      width: 100%;
+    }
+
     .btn:hover {
-      background-color: #000;
       color: #fff;
     }
 
+    .btn-container {
+      animation-delay: 0.9s;
+    }
+
     footer {
-      margin-top: 50px;
-      padding: 20px;
-      font-size: 13px;
+      margin-top: 60px;
+      font-size: 12px;
       color: #888;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="https://via.placeholder.com/150" alt="Foto">
-    <h1>Sara Rocha</h1>
+  <h1>Sara Rocha</h1>
 
-    <p>
-      Desenvolvedora de sites iniciante, mas com muita dedicação e talento. Estou no começo da minha jornada, e por isso meus valores são mais acessíveis (entre R$300 e R$1.500 dependendo do projeto), enquanto muitos profissionais cobram de R$5.000 a R$15.000 — porém isso não define a qualidade do meu trabalho.
-      <br><br>
-      Sou extremamente dedicada, criativa e comprometida em entregar projetos bem feitos, bonitos e funcionais. Cada site que desenvolvo recebe atenção total, como se fosse único (porque realmente é).
-      <br><br>
-      Além disso, também sou professora de inglês, oferecendo aulas por R$95 cada, com foco em iniciantes e aprendizado prático no dia a dia.
-      <br><br>
-      Se você procura alguém que vai se esforçar de verdade, entender sua ideia e transformar em algo incrível, você acabou de encontrar. Sempre evoluindo, sempre dando o meu melhor.
-    </p>
-  </header>
+  <p>
+    Desenvolvedora de sites iniciante, mas com muita dedicação e talento. Estou no começo da minha jornada, e por isso meus valores são mais acessíveis (entre R$300 e R$1.500 dependendo do projeto), enquanto muitos profissionais cobram de R$5.000 a R$15.000 — porém isso não define a qualidade do meu trabalho.
+    <br><br>
+    Sou extremamente dedicada, criativa e comprometida em entregar projetos bem feitos, bonitos e funcionais. Cada site que desenvolvo recebe atenção total, como se fosse único (porque realmente é).
+    <br><br>
+    Além disso, também sou professora de inglês e ofereço aulas por R$95 cada, com foco em iniciantes e aprendizado prático no dia a dia.
+    <br><br>
+    Se você procura alguém que vai se esforçar de verdade, entender sua ideia e transformar em algo incrível, você acabou de encontrar. Sempre evoluindo, sempre dando o meu melhor.
+  </p>
 
-  <section>
-    <h2>Serviços</h2>
-    <ul>
-      <li>💻 Desenvolvimento de sites: R$300 a R$1.500</li>
-      <li>📚 Aulas de inglês: R$95 por aula</li>
-    </ul>
-  </section>
+  <div class="section services" style="animation-delay: 0.8s;">
+    <div>💻 Desenvolvimento de sites: R$300 a R$1.500</div>
+    <div>📚 Aulas de inglês: R$95 por aula</div>
+  </div>
 
-  <section>
+  <div class="section btn-container">
     <a href="https://wa.me/554699276622" target="_blank" class="btn">
       Fale comigo no WhatsApp
     </a>
-  </section>
+  </div>
 
   <footer>
     © 2026 Sara Rocha — Todos os direitos reservados
